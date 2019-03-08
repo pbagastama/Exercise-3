@@ -3,47 +3,55 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
+    <title>Hacktiv8</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
 
     <style>
+        * {
+          box-sizing: border-box;
+        }
+        #carinama {
+          width: 99%;
+          font-size: 16px;
+          padding: 12px 5px 12px 5px;
+          border: 2px solid #2CA8FF;
+          border-radius: 5px;
+          margin-bottom: 12px;
+        }
         table {
           font-family: arial, sans-serif;
           border-collapse: collapse;
+          border: 1px solid #2CA8FF;
           width: 100%;
         }
-
         td, th {
-          border: 1px solid #dddddd;
+          border: 1px solid #2CA8FF;
           text-align: left;
-          padding: 8px;
+          padding: 12px;
         }
-
-        tr:nth-child(even) {
-          background-color: #dddddd;
+        tr {
+          border-bottom: 1px solid #ddd;
+        }
+        #datatable tr.header, #datatable tr:hover {
+          background-color: #2CA8FF;
         }
     </style>
-
-    <script src="main.js"></script>
 </head>
 <body>
-    <div id="tesdata">
-        Name 
-        <input id="nama" type="text">
-        <input id="cari" type="submit">
-    </div>
+    <h2> Exercise - 3 </h2>
+    <input type="text" id="carinama" onkeyup="myFunction()" placeholder="Search for Names.." title="Type in a name">
+
+    <h2>Data Planet</h2>
+
+    <table id="datatable">
+      <tr class="header">
+        <th style="width:30%;">Name</th>
+        <th style="width:30%;">Diameter</th>
+        <th style="width:30%;">Population</th>
+      </tr>
+    </table>
     
-    <h2>Data Table</h2>
-
-    <table id="datatable"></table>
-
-    <script src="swapi.js">
     
-    </script>
-
-    <!-- <script>
-        document.getElementById("testdata").textContent = JSON.stringify(cobadata);
-    </script> -->
+    <script src="swapi.js"></script>
 </body>
 </html>

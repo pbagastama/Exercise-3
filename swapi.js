@@ -1,4 +1,3 @@
-
 var cobadata = 
 {
     "count": 61, 
@@ -227,25 +226,59 @@ var cobadata =
     ]
 }
 
-console.log(cobadata);
+// console.log(cobadata);
 // document.getElementById("tesdata").textContent = cobadata.count;
 // document.getElementById("tesdata").textContent = cobadata.results[0].name;
 
 var table = document.getElementById("datatable");
+// var rowhd = table.insertRow(0);
+
+// var head1 = rowhd.insertCell(0);
+// var head2 = rowhd.insertCell(1);
+// var head3 = rowhd.insertCell(2);
+
+// head1.innerHTML = "Name";
+// head2.innerHTML = "Diameter";
+// head3.innerHTML = "Population";
+
 for (var i=0; i<cobadata.results.length; i++){
-    var row = table.insertRow(0);
-    
-    var cell1 = row.insertCell(0);
-    var cell2 = row.insertCell(1);
-    var cell3 = row.insertCell(2);
+    var rowbd = table.insertRow(1);
+
+    var cell1 = rowbd.insertCell(0);
+    var cell2 = rowbd.insertCell(1);
+    var cell3 = rowbd.insertCell(2);
 
     cell1.innerHTML = cobadata.results[i].name;
     cell2.innerHTML = cobadata.results[i].diameter;
     cell3.innerHTML = cobadata.results[i].population;
 }
 
-// document.getElementById('cari').addEventListener("click", () => {
-// 	document.getElementsByTagName('')[0].innerHTML = 'Kodinger adalah situs untuk belajar pemograman yang adminnya jarang post.';
-//   	document.getElementsByTagName('p')[0].style.color = 'red';
-// });
+function myFunction() {
+    var input, filter, table, tr, td, i;
+    input = document.getElementById("carinama");
+    filter = input.value.toUpperCase();
+    
+    table = document.getElementById("datatable");
+    tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+      td = tr[i].getElementsByTagName("td")[0];
+      if (td) {
+        if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none";
+        }
+      }       
+    }
+}
 
+// function fungsiCari(){
+//     var input1 = 
+//     document.getElementById("nama").value;
+//     document.getElementById("hasilCari").innerHTML = input1; 
+// }
+
+// var carinama = cobadata.results.filter(function(carip){
+//     return carip.name == "Geonosis";
+// });
+// console.log(carinama);
